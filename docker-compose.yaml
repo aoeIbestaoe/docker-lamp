@@ -1,0 +1,25 @@
+version: "3.6" 
+services:
+    php-apache:
+        build:
+            context: ./php-apache
+        ports:
+            - 80:80
+        volumes:
+            - /home/sander/LAMP/website-root:/var/www/html
+        links:
+            - 'mysql'
+    mysql:
+        image: 
+            mysql:5.6
+        volumes:
+            - mysql:/var/lib/mysql
+        environment:
+            TZ: "Europe/Brussels"
+            MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+            MYSQL_ROOT_PASSWORD: "********"
+            MYSQL_USER: 'sander'
+            MYSQL_PASSWORD: '********'
+            MYSQL_DATABASE: 'testdb'
+volumes:
+    mysql:
