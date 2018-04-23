@@ -5,7 +5,7 @@ docker run \
     -e MYSQL_ROOT_PASSWORD=**** \
     -e MYSQL_DATABASE=homepage \
     -e MYSQL_USER=sander \
-    -e MYSQL_PASSWORD=$@nd3r \
+    -e MYSQL_PASSWORD='$@nd3r' \
     -v /home/sander/LAMP/db_dir:/var/lib/mysql \
     mysql:5.7 \
     --character-set-server=utf8mb4 \
